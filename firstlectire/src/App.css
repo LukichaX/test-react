@@ -1,17 +1,23 @@
-.card{
-  height: 200px;
+.card {
   width: 200px;
   background-color: black;
-  color: whitesmoke;
+  color: #f5f5f5;
   margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 
-.card-pic{
-  height: 80%;
-  margin: 10px;
-  
+.card-pic {
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.title{
-  color: green;
+.title, .card p {
+  word-wrap: break-word;
+  margin: 2px 0;
 }
