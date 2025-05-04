@@ -1,0 +1,17 @@
+.card{
+  height: 200px;
+  width: 200px;
+  background-color: black;
+  color: whitesmoke;
+  margin: 10px;
+}
+
+.card-pic{
+  height: 80%;
+  margin: 10px;
+  
+}
+
+.title{
+  color: green;
+}
