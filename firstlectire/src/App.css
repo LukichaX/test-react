@@ -1,23 +1,78 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.card-container {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 5vw 2vw;
+  gap: 2vw;
+  background-color: #1a1a1a; /* optional for aesthetics */
+  padding: 20px;
+}
+
 .card {
-  width: 200px;
+  flex: 0 0 auto;
+  width: 90%;
+  max-width: 400px;
   background-color: black;
   color: #f5f5f5;
   margin: 10px;
-  padding: 10px;
+  padding: 16px;
   box-sizing: border-box;
   border-radius: 8px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
 .card-pic {
   width: 100%;
-  height: auto;
-  max-height: 120px;
-  object-fit: contain;
-  display: block;
+  height: clamp(150px, 30vw, 300px); /* increase max height for larger screens */
+  object-fit: contain; /* fills container nicely without distortion */
+  border-radius: 6px; /* optional: smooth edges */
   margin-bottom: 10px;
 }
 
 .title, .card p {
   word-wrap: break-word;
   margin: 2px 0;
+}
+
+.like-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.like-count {
+  font-size: 1rem;
+  color: #ff4c4c;
+}
+
+.button-like {
+  background: linear-gradient(145deg, #0a70e6, #3b0261); /* initial gradient */
+  border: none; /* removes default border */
+  color: white; /* text color */
+  padding: 12px 24px; /* size of the button */
+  font-size: 16px; /* font size */
+  border-radius: 30px; /* rounded corners */
+  cursor: pointer; /* mouse cursor changes to pointer on hover */
+  box-shadow: 4px 4px 10px linear-gradient(145deg, #0a70e6, #3b0261), -4px -4px 10px linear-gradient(145deg, #0a70e6, #3b0261); /* subtle shadow */
+  transition: background 3s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.3s ease; /* slow start and then accelerate */
+}
+
+.button-like:hover {
+  background: linear-gradient(145deg, #3b0261, #0a70e6); /* reversed gradient */
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3), -4px -4px 15px rgba(255, 255, 255, 0.3); /* stronger shadow */
+}
+
+.button-like:active {
+  transform: scale(0.95); /* slight shrink effect when clicked */
+  box-shadow: inset 2px 2px 5px rgba(0, 255, 191, 0.1), inset -2px -2px 5px rgba(255, 0, 255, 0.1); /* inset shadow */
 }

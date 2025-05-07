@@ -24,7 +24,7 @@ const movies = [
 
 function App() {
   return (
-    <>
+    <div className="card-container">
       {movies
         .map((movie, i) => (
           <Card
@@ -35,7 +35,7 @@ function App() {
             img={movie.img}
           />
         ))}
-    </>
+    </div>
   );
 }
 
