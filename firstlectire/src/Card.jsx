@@ -1,11 +1,17 @@
 import { useState } from "react";
-export default function Card(props) {
-  const [likeCount, setLikeCount] = useState(1024);
 
-  function increaseLike() {
-    console.log(likeCount, "before");
-    setLikeCount(likeCount + 1);
-    console.log(likeCount, "afterr");
+export default function Card(props) {
+  const [likeCount, setLikeCount] = useState(100);
+  const [isLiked, setIsLiked] = useState(false);
+
+  function like() {
+    if (!isLiked) {
+      setLikeCount(likeCount + 1);
+      setIsLiked(!isLiked);
+    } else {
+      setLikeCount(likeCount - 1);
+      setIsLiked(!isLiked);
+    }
   }
 
   return (
@@ -19,8 +25,9 @@ export default function Card(props) {
       <p>rating {props.rating}/10 </p>
 
       <div className="like-row">
-        <button className="button-like" onClick={increaseLike}>
-          Like
+        <button className="button-like" onClick={like}>
+          {isLiked && <p>❤️</p>}
+          {!isLiked && <p>🤍</p>}
         </button>
         <span className="like-count">❤️ {likeCount}</span>
       </div>

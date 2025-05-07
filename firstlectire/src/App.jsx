@@ -1,5 +1,6 @@
 import "./app.css";
 import Card from "./Card";
+import { useState } from "react";
 
 const movies = [
   {
@@ -23,18 +24,18 @@ const movies = [
 ];
 
 function App() {
+  let i = 1;
   return (
     <div className="card-container">
-      {movies
-        .map((movie, i) => (
-          <Card
-            key={i}
-            title={movie.title}
-            length={movie.length}
-            rating={movie.rating}
-            img={movie.img}
-          />
-        ))}
+      {movies.map((movie, i) => (
+        <Card
+          key={i}
+          title={movie.title}
+          length={movie.length}
+          rating={movie.rating}
+          img={movie.img}
+        />
+      ))}
     </div>
   );
 }
