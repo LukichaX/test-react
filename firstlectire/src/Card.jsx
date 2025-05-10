@@ -16,13 +16,23 @@ export default function Card(props) {
 
   return (
     <div className="card">
+      <p>{props.id}</p>
       <img src={props.img} alt="" className="card-pic" />
 
-      <p className="title">{props.title.toUpperCase()}</p>
+      <p className="title">{props.title}</p>
 
-      <p>length: {props.length}</p>
-
-      <p>rating {props.rating}/10 </p>
+      <div className="movie-info">
+        <div className="movie-specs">
+          <p className="length">{"Length: " + props.length}</p>
+          <p className="rating">{"Rating: " + props.rating}/10</p>
+        </div>
+        <div>
+          <p className="description">
+            {props.body}
+          </p>
+        </div>
+      </div>
+      
 
       <div className="like-row">
         <button className="button-like" onClick={like}>
